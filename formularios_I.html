@@ -32,11 +32,29 @@ h1{
 
   $(document).ready(function() {
     //$("#comprobar").click(comprobar_datos);
+
+    $("#nombre").focus(function(){
+        var campo_nombre=$(this);
+        if(campo_nombre.val()==campo_nombre.attr("value")){
+          campo_nombre.val("");
+        }
+    });
+
     $("#form_datos").submit(function(){
-      if($("#nombre").val()==""){
+
+      if($("#nombre").val()=="" || $("#nombre").val()=="Obligatorio nombre"){
         alert("Por favor completa el nombre");
         $("#nombre").focus();
+        
         return false;
+      }
+    });
+    $("#edad").blur(function(){
+      var edad_usuario=$(this).val();
+      if(isNaN(edad_usuario)){
+        alert("Por favor introduce un valor numerico");
+        $(this).focus();
+        $(this).val("");
       }
     });
 
@@ -61,6 +79,8 @@ h1{
       alert("Eres mujer");
     }
   }
+
+
 </script>
 </head>
 
