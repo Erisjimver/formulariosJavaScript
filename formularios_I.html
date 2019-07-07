@@ -6,22 +6,22 @@
 <style>
 
 body{
-	background-color:#FFC;
+  background-color:#FFC;
 }
 
 #principal{
-	
-	padding:10px 10px 10px 50px;
-	background-color:#F93;	
-	box-shadow: 10px 10px 5px 0px #999999;
-	border-radius: 10px;
+  
+  padding:10px 10px 10px 50px;
+  background-color:#F93;  
+  box-shadow: 10px 10px 5px 0px #999999;
+  border-radius: 10px;
 }
 
 td{
-	padding-bottom:25px;
+  padding-bottom:25px;
 }
 h1{
-	text-align:center;
+  text-align:center;
 }
 
 
@@ -30,27 +30,35 @@ h1{
 
 <script>
 
-	$(document).ready(function() {
-		$("#comprobar").click(comprobar_datos1);
-	});
-	function comprobar_datos(){
-		
-		//var minombre=("#nombre").val();
-		//$(":text").each(function(){
-		$(":input").each(function(){
-			alert($(this).val());
-		});
-	}
+  $(document).ready(function() {
+    //$("#comprobar").click(comprobar_datos);
+    $("#form_datos").submit(function(){
+      if($("#nombre").val()==""){
+        alert("Por favor completa el nombre");
+      }
+    });
 
-	function comprobar_datos1(){
-		
-		if($("#masculino").attr("checked")){//da igual si colocamos deporte o alguna otra casilla
-			alert("Eres hombre");
-		}else
-		{
-			alert("Eres mujer");
-		}
-	}
+  });
+
+
+  function comprobar_datos(){
+    
+    //var minombre=("#nombre").val();
+    //$(":text").each(function(){
+    $(":input").each(function(){
+    //  alert($(this).val());
+    });
+  }
+
+  function comprobar_datos1(){
+    
+    if($("#masculino").attr("checked")){//da igual si colocamos deporte o alguna otra casilla
+      alert("Eres hombre");
+    }else
+    {
+      alert("Eres mujer");
+    }
+  }
 </script>
 </head>
 
@@ -128,7 +136,7 @@ h1{
       </table></td>
     </tr>
     <tr>
-    <td colspan="2" align="center"><input type="button" value="Comprobar" id="comprobar"></td>
+    <td colspan="2" align="center"><input type="submit" value="Enviar" id="comprobar"></td>
    
     </tr>
   </table>
