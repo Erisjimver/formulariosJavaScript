@@ -35,6 +35,8 @@ h1{
     $("#form_datos").submit(function(){
       if($("#nombre").val()==""){
         alert("Por favor completa el nombre");
+        $("#nombre").focus();
+        return false;
       }
     });
 
