@@ -49,6 +49,7 @@ h1{
         return false;
       }
     });
+
     $("#edad").blur(function(){
       var edad_usuario=$(this).val();
       if(isNaN(edad_usuario)){
@@ -56,6 +57,20 @@ h1{
         $(this).focus();
         $(this).val("");
       }
+    });
+    var miArray=new Array();
+    var i = 0;
+    //$(":radio").click(function(){
+    $(":checkbox").click(function(){
+     // alert($(this).val());
+      miArray[i]=$(this).val();
+      //alert("Posicion "+ i +" "+miArray[i]);
+      $("#las_aficiones").append(miArray[i]).append("<br>");
+      i++;
+    });
+
+    $("#pais").change(function(){
+      alert("Pais de resdencia: "+$(this).val());
     });
 
   });
@@ -163,6 +178,11 @@ h1{
     </tr>
   </table>
   </form>
+</div>
+
+<div id="las_aficiones">
+  
+
 </div>
 
 </body>
