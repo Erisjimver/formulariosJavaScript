@@ -1,0 +1,19 @@
+
+body{
+  background-color:#FFC;
+}
+
+#principal{
+  
+  padding:10px 10px 10px 50px;
+  background-color:#F93;  
+  box-shadow: 10px 10px 5px 0px #999999;
+  border-radius: 10px;
+}
+
+td{
+  padding-bottom:25px;
+}
+h1{
+  text-align:center;
+}
